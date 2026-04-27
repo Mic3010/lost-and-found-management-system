@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f7f7f7;
+    color: #111;
+}
+
+.container {
+    width: 95%;
+    margin: 30px auto;
+    background: #fff;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.topbar h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.topbar p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.btn, .logout, button {
+    background: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn:hover, .logout:hover, button:hover {
+    background: #333;
+}
+
+.search-form {
+    display: flex;
+    gap: 8px;
+}
+
+.search-form input {
+    width: 260px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th {
+    background: #111;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: 500;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+tr:hover {
+    background: #f2f2f2;
+}
+
+.item-img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.preview-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.status {
+    border: 1px solid #111;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.edit {
+    border: 1px solid #111;
+    color: #111;
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.edit:hover {
+    background: #111;
+    color: white;
+}
+
+.delete {
+    background: #111;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.delete:hover {
+    background: #333;
+}
+
+.form-box, .auth-box {
+    width: 430px;
+    margin: 50px auto;
+    background: white;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+}
+
+.form-box h2, .auth-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 500;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 11px;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    background: #fff;
+    color: #111;
+}
+
+textarea {
+    height: 90px;
+    resize: none;
+}
+
+.back {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #111;
+    text-decoration: none;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+.auth-body {
+    background: #f7f7f7;
+    min-height: 100vh;
+}
+
+.auth-box p {
+    text-align: center;
+    margin-top: 15px;
+    color: #555;
+}
+
+.auth-box a {
+    color: #111;
+    font-weight: bold;
+}
+
+.error {
+    border: 1px solid #111;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    text-align: center;
+}
