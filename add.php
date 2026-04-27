@@ -3,6 +3,7 @@ include 'db.php';
 
 if(!isset($_SESSION['user'])){
     header("Location: login.php");
+    exit();
 }
 
 if(isset($_POST['submit'])){
@@ -13,18 +14,27 @@ if(isset($_POST['submit'])){
     $status = $_POST['status'];
     $date = $_POST['date'];
 
-    $image = $_FILES['image']['name'];
-    $tmp = $_FILES['image']['tmp_name'];
+    $image = "";
 
-    if($image != ""){
+    if(isset($_FILES['image']) && $_FILES['image']['error'] == 0){
+        $image = time() . "_" . basename($_FILES['image']['name']);
+        $tmp = $_FILES['image']['tmp_name'];
+
         move_uploaded_file($tmp, "uploads/" . $image);
     }
 
-    mysqli_query($conn, "INSERT INTO items 
-    (item_name, category, description, location, status, image, date_reported)
-    VALUES ('$name','$cat','$desc','$loc','$status','$image','$date')");
+    $user_id = $_SESSION['user_id'];
 
-    header("Location: index.php");
+    $query = "INSERT INTO items 
+    (item_name, category, description, location, status, image, date_reported, user_id)
+    VALUES ('$name','$cat','$desc','$loc','$status','$image','$date','$user_id')";
+
+    if(mysqli_query($conn, $query)){
+        header("Location: index.php");
+        exit();
+    } else {
+        echo "ERROR: " . mysqli_error($conn);
+    }
 }
 ?>
 
@@ -45,13 +55,13 @@ if(isset($_POST['submit'])){
 
     <label>Category</label>
     <select name="category" required>
-    <option value="">Select Category</option>
-    <option>Electronics</option>
-    <option>Documents</option>
-    <option>Clothing</option>
-    <option>Accessories</option>
-    <option>Others</option>
-</select>
+        <option value="">Select Category</option>
+        <option>Electronics</option>
+        <option>Documents</option>
+        <option>Clothing</option>
+        <option>Accessories</option>
+        <option>Others</option>
+    </select>
 
     <label>Description</label>
     <textarea name="description"></textarea>
